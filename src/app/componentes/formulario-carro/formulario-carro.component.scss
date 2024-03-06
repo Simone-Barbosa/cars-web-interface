@@ -1,0 +1,10 @@
+.formulario {
+  padding: 20px;
+}
+
+.inputs{
+  display: grid;
+  grid-template-columns: 30% 70%;
+  justify-content: space-between;
+  padding: 10px;
+}

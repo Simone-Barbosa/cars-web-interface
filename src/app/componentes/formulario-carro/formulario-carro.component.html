@@ -1,0 +1,59 @@
+<div class="formulario" >
+
+    <div *ngIf="carroRecebido; else elseBlock">
+    <button (click)="adicionarAlterar('put')" class="btn btn-primary me-2">Alterar</button>
+    <button (click)="limparCampos()" class="btn btn-primary me-2">Limpar Campos</button>
+  </div>
+  <ng-template #elseBlock>
+    <div>
+      <button (click)="adicionarAlterar('post')" class="btn btn-primary me-2">Adicionar</button>
+      <button (click)="limparCampos()" class="btn btn-primary me-2">Limpar Campos</button>
+    </div>
+  </ng-template>
+
+  <br/>
+
+  <div>
+    <div class="inputs">
+      <span>Nome:</span>
+      <input
+        [(ngModel)]="carro.name"
+        type="text"
+        placeholder="Informe o nome"
+      />
+    </div>
+    <div class="inputs">
+      <span inputLabel>Modelo:</span>
+      <input [(ngModel)]="carro.model" type="text" placeholder="Informe o modelo"/>
+    </div>
+    <div class="inputs">
+      <span>Ano Fabricação:</span>
+      <input
+        [(ngModel)]="carro.yearManufacture"
+        type="text"
+        placeholder="Informe o ano de fabricação"
+      />
+    </div>
+    <div class="inputs">
+      <span>Ano Modelo:</span>
+      <input
+        [(ngModel)]="carro.yearModel"
+        type="text"
+        placeholder="Informe o ano do modelo"
+      />
+    </div>
+
+    <div>
+      <p *ngIf="carroRecebido">Marca Atual: {{ carro.marca?.name }}</p>
+      <div class="inputs">
+        <select [(ngModel)]="carro.marca" (change)="selecao(carro.marca!)">
+          <option [ngValue]="null">Selecione</option>
+          <option *ngFor="let marca of marcas" [ngValue]="marca">
+            {{ marca.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</div>

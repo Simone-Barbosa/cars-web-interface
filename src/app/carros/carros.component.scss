@@ -1,0 +1,22 @@
+.carros {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 60% 40%;
+}
+
+.carrosElements{
+  padding: 20px;
+}
+
+
+.listaCarros {
+  display: grid;
+  grid-template-columns: 25% 25% 15% 10% 12% 12%;
+  padding: 5px;
+}
+
+
+.buttons {
+  width: 110px;
+  height: 35px;
+}

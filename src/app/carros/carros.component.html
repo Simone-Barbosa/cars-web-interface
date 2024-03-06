@@ -1,0 +1,64 @@
+<h1 class="bd-title mt-0">Carros</h1>
+<p class="bd-lead">Consulte aqui os carros cadastrados no banco de dados!</p>
+
+<div class="carros">
+  <div class="carrosElements">
+    <div>
+      <button (click)="criarNovoCarro()" class="btn btn-primary me-2 buttons">
+        Criar Carro
+      </button>
+    </div>
+    <div>
+      <div>
+        <div class="row listaCarros">
+          <span>Nome</span>
+          <span>Ano Fabricação/Ano Modelo</span>
+          <span>Modelo</span>
+          <span>Marca</span>
+          <span>Ações</span>
+          <span></span>
+        </div>
+
+        <div
+          class="list-group-item border-dark-subtle"
+          *ngFor="let carro of carros; index as i"
+        >
+            <div class="row listaCarros">
+              <span>{{ carro.name }}</span>
+              <span>{{ carro.yearManufacture }}/{{ carro.yearModel }}</span>
+              <span>{{ carro.model }}</span>
+              <span>{{ carro.marca?.name }}</span>
+
+              <button
+                (click)="editarCarro(carro)"
+                class="btn btn-primary me-2 buttons"
+              >
+                Alterar
+              </button>
+              <button class="btn btn-primary me-2 buttons" (click)="excluirCarro(carro)">Excluir</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carrosElements">
+    <div *ngIf="alterarCarro">
+      <h3>Alterar carro existente:</h3>
+
+      <app-formulario-carro [carroRecebido]="carroSelecionado" [formularioCriacao]="novoCarro" (recarregar)="recarregarLista($event)"> </app-formulario-carro>
+      <br/>
+      <button (click)="fecharFormulario()" class="btn btn-primary me-2 buttons">
+        Fechar
+      </button>
+    </div>
+    <div *ngIf="novoCarro">
+      <h3>Criar um novo carro:</h3>
+      <app-formulario-carro [formularioCriacao]="novoCarro" (recarregar)="recarregarLista($event)"> </app-formulario-carro>
+      <br/>
+      <button (click)="fecharFormulario()" class="btn btn-primary me-2 buttons">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div>
