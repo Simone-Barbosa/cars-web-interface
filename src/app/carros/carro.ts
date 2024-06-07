@@ -6,7 +6,7 @@ export class Carro {
     model?:string|null;
     yearManufacture?:number|null;
     yearModel?:number|null;
-    marca?:Marca|null;
+    make?:Marca|null;
 
     constructor(id?:number|null, name?:string|null, model?:string|null, yearManufacture?:number|null, yearModel?:number|null, marca?:Marca|null){
         this.id = id;
@@ -14,6 +14,6 @@ export class Carro {
         this.model = model;
         this.yearManufacture = yearManufacture;
         this.yearModel = yearModel;
-        this.marca = marca;
+        this.make = marca;
     }
 }

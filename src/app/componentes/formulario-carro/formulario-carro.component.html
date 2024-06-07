@@ -44,9 +44,9 @@
     </div>
 
     <div>
-      <p *ngIf="carroRecebido">Marca Atual: {{ carro.marca?.name }}</p>
+      <p *ngIf="carroRecebido">Marca Atual: {{ carro.make?.name }}</p>
       <div class="inputs">
-        <select [(ngModel)]="carro.marca" (change)="selecao(carro.marca!)">
+        <select [(ngModel)]="carro.make" (change)="selecao(carro.make!)">
           <option [ngValue]="null">Selecione</option>
           <option *ngFor="let marca of marcas" [ngValue]="marca">
             {{ marca.name }}

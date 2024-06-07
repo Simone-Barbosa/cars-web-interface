@@ -26,14 +26,14 @@ export class FormularioCarroComponent implements OnInit {
         this.carroRecebido.model,
         this.carroRecebido.yearManufacture,
         this.carroRecebido.yearModel,
-        this.carroRecebido.marca
+        this.carroRecebido.make
       );
     }
     this.consultarMarcas();
   }
 
   selecao(marca: Marca | null) {
-    this.carro.marca = marca;
+    this.carro.make = marca;
   }
 
   limparCampos() {
@@ -41,7 +41,7 @@ export class FormularioCarroComponent implements OnInit {
     this.carro.yearManufacture = null;
     this.carro.yearModel = null;
     this.carro.id = null;
-    this.carro.marca = null;
+    this.carro.make = null;
     this.carro.model = null;
   }
 
